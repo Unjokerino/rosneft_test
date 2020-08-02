@@ -130,26 +130,28 @@ function HomeScreen(props) {
             }}>
                 <View style={styles.subHeader}>
                     <Text style={[styles.text, styles.headerText, styles.subHeader__text]}>Конфигуратор карьеры</Text>
-                    <Animated.View
-                        style={[styles.collapsButton,
-                        {
-                            transform: [{
-                                rotate: fadeAnim.interpolate({
-                                    inputRange: [0, 1],
-                                    outputRange: ["0deg", "180deg"]
-                                }),
-                               
-                            }]
-                        }]}>
+                    <View style={styles.subHeader__footer} >
+                        <Animated.View
+                            style={[styles.collapsButton,
+                            {
+                                transform: [{
+                                    rotate: fadeAnim.interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: ["0deg", "180deg"]
+                                    }),
 
-                        <IconButton
-                            style={[styles.collapsButton__icon]}
-                            icon={"chevron-up"}
-                            color="#94a4b4"
-                            size={26}
+                                }]
+                            }]}>
 
-                        />
-                    </Animated.View>
+                            <IconButton
+                                style={[styles.collapsButton__icon]}
+                                icon={"chevron-up"}
+                                color="#94a4b4"
+                                size={26}
+
+                            />
+                        </Animated.View>
+                    </View>
                 </View>
             </TouchableNativeFeedback>
 
@@ -208,22 +210,7 @@ const styles = StyleSheet.create({
     hidden: {
         display: 'none'
     },
-    collapsButton: {
-        position: 'absolute',
-        bottom: -25,
-        left: '46%',
-        width: 50,
-        height: 50,
-        borderRadius: 25,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F0F6FC'
-
-    },
-    collapsButton__icon: {
-
-        backgroundColor: MAIN_COLOR
-    },
+   
     headerText: {
 
     },
@@ -296,10 +283,33 @@ const styles = StyleSheet.create({
         backgroundColor: MAIN_COLOR,
         borderRadius: BORDER_RAIUS,
         justifyContent: 'center',
-        paddingHorizontal: 15,
+        
+    },
+    subHeader__footer:{
+        position: 'absolute',
+        bottom: -26,
+        width:'100%',
+        flexDirection:'row',
+        justifyContent:'center',
+        
     },
     subHeader__text: {
+        paddingHorizontal: 15,
         color: '#fff'
+    },
+    collapsButton: {
+       
+        width: 50,
+        height: 50,
+        borderRadius: 25,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F0F6FC'
+
+    },
+    collapsButton__icon: {
+
+        backgroundColor: MAIN_COLOR
     },
     cardsContainer: {
         flex: 1,
