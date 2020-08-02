@@ -41,13 +41,16 @@ export default function Card(props) {
                     <View style={styles.card__ratings}>
                         {[1, 2, 3, 4, 5].map(elem => {
                             return (
+                               
+                                    
+                               
                                 <IconButton
                                     style={styles.icon}
-                                    icon={elem <= item.rating ? "star" : "star-outline"}
+                                    icon={elem <= Math.round(item.rating) ?  "star" : "star-outline" }
                                     color="orange"
                                     size={26}
-
                                 />
+                              
                             )
                         })}
                     </View>
@@ -98,9 +101,13 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         paddingHorizontal: 20,
         width: '100%',
+       
         flex: 1,
     },
     card__title: {
+        maxHeight:100,
+        flex:1,
+        overflow:'hidden',
         width: '100%',
     },
     card__header: {

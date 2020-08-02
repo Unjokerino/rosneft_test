@@ -54,7 +54,7 @@ function HomeScreen(props) {
     const getData = async () => {
 
         try {
-            let response = await fetch("http://jsgod.ru/api/get_courses")
+            let response = await fetch("http://jsgod.ru/api/get_courses?page=1")
             let json = await response.json()
             setcards(json)
         } catch (error) {
@@ -138,10 +138,7 @@ function HomeScreen(props) {
                                     inputRange: [0, 1],
                                     outputRange: ["0deg", "180deg"]
                                 }),
-                                scale: fadeAnim.interpolate({
-                                    inputRange: [0, 1],
-                                    outputRange: [0.5, 1]
-                                }),
+                               
                             }]
                         }]}>
 
